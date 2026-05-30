@@ -483,3 +483,11 @@ Potential future improvements include:
 ARA-1 demonstrates how Agentic AI can automate complex financial research workflows. Through the integration of ReAct reasoning, tool orchestration, memory systems, retrieval-augmented generation, and multi-source synthesis, the system can perform autonomous financial analysis while maintaining transparency and reliability.
 
 The architecture has been designed to be modular, scalable, and extensible, enabling future expansion into more sophisticated financial intelligence systems.
+
+Architecture: ReAct
+
+Reason:
+Simpler implementation
+Better debugging
+Meets project requirements
+Supports autonomous tool selection
