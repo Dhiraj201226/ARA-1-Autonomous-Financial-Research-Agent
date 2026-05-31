@@ -4,6 +4,8 @@ from tools.finance_tool import FinanceTool
 from tools.calculator import CalculatorTool
 from tools.report_generator import ReportGenerator
 from tools.sec_tool import SECTool
+from agent.planner import Planner
+from agent.react_loop import ReActLoop
 
 registry = ToolRegistry()
 registry.register(
@@ -77,13 +79,25 @@ memory = LongTermMemory()
 #     embedder.embed(
 #         "NVIDIA dominates AI chips"
 #     )
+# # )
+# query = embedder.embed(
+#     "How leads AI hardware?"
 # )
-query = embedder.embed(
-    "How leads AI hardware?"
+
+# results = memory.search(
+#     query
+# )
+
+# print(results["documents"])
+
+planner = Planner()
+
+react = ReActLoop(planner,  registry,synthesizer,memory,embedder)
+
+
+data = react.run(
+    "Analyze Apple",
+    "AAPL"
 )
 
-results = memory.search(
-    query
-)
-
-print(results["documents"])
+print(data)
